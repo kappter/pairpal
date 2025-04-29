@@ -1,0 +1,20 @@
+[
+    {
+        "pairing": "R-P-I x R-P-I",
+        "description": "Both quiet, reflective, and independent—silently rooted in the past.",
+        "cautions": "Risk of isolation; no spark.",
+        "advice": "Share a memory to connect quietly."
+    },
+    {
+        "pairing": "R-P-M x R-P-M",
+        "description": "Both reserved, memory-focused, and balanced—calmly reminiscing.",
+        "cautions": "Stagnation if too inward; limited outreach.",
+        "advice": "Plan a shared reflection to bond."
+    },
+    {
+        "pairing": "O-F-M x O-F-D",
+        "description": "Bold dreamer meets eager clinger—vibrant vision vs. loud reliance.",
+        "cautions": "Guide may tire of Dreamer; Dreamer may overwhelm.",
+        "advice": "Guide: Offer bold support. Dreamer: Share hope softly."
+    }
+]
