@@ -832,5 +832,569 @@
         "description": "Calm linker meets bold solo—present cooperation vs. loud reflection.",
         "cautions": "Balancer may withdraw; Recaller may overwhelm.",
         "advice": "Balancer: Stay calm. Recaller: Tone down."
-    }
+    },
+    {
+        "pairing": "R-N-M x O-P-M",
+        "description": "Calm linker meets loud linker—present cooperation vs. vibrant nostalgia.",
+        "cautions": "Balancer may lean now; Keeper may lean past.",
+        "advice": "Balancer: Suggest a now-task. Keeper: Offer warm space."
+    },
+    {
+        "pairing": "R-N-M x O-P-D",
+        "description": "Calm linker meets vocal needer—present cooperation vs. loud reliance.",
+        "cautions": "Balancer may tire of Clinger; Clinger may overwhelm.",
+        "advice": "Balancer: Offer light link. Clinger: Express need softly."
+    },
+    {
+        "pairing": "R-N-M x O-N-I",
+        "description": "Calm linker meets vivid solo—present cooperation vs. loud presence.",
+        "cautions": "Balancer may withdraw; Lone may dominate.",
+        "advice": "Balancer: Stay calm. Lone: Ease volume."
+    },
+    {
+        "pairing": "R-N-M x O-N-M",
+        "description": "Calm linker meets bright connector—present cooperation vs. vibrant now.",
+        "cautions": "Balancer may lean quiet; Linker may push.",
+        "advice": "Balancer: Suggest a now-task. Linker: Offer light link."
+    },
+    {
+        "pairing": "R-N-M x O-N-D",
+        "description": "Calm linker meets loud needer—present cooperation vs. present reliance.",
+        "cautions": "Balancer may tire of Leaner; Leaner may overwhelm.",
+        "advice": "Balancer: Offer light link. Leaner: Voice need softly."
+    },
+    {
+        "pairing": "R-N-M x O-F-I",
+        "description": "Calm linker meets fierce solo—present cooperation vs. loud future.",
+        "cautions": "Balancer may withdraw; Pioneer may dominate.",
+        "advice": "Balancer: Stay calm. Pioneer: Tone down."
+    },
+    {
+        "pairing": "R-N-M x O-F-M",
+        "description": "Calm linker meets bold dreamer—present cooperation vs. vibrant vision.",
+        "cautions": "Balancer may lean now; Guide may lean future.",
+        "advice": "Balancer: Suggest a now-task. Guide: Offer bold support."
+    },
+    {
+        "pairing": "R-N-M x O-F-D",
+        "description": "Calm linker meets eager clinger—present cooperation vs. loud reliance.",
+        "cautions": "Balancer may tire of Dreamer; Dreamer may overwhelm.",
+        "advice": "Balancer: Offer light link. Dreamer: Share hope softly."
+    },
+    {
+        "pairing": "R-N-D x R-F-I",
+        "description": "Soft needer meets lone visionary—present reliance vs. future solitude.",
+        "cautions": "Leaner may lean; Planner may isolate.",
+        "advice": "Leaner: Voice need softly. Planner: Share a goal quietly."
+    },
+    {
+        "pairing": "R-N-D x R-F-M",
+        "description": "Soft needer meets steady dreamer—present reliance vs. future balance.",
+        "cautions": "Leaner may cling; Visionary may tire.",
+        "advice": "Leaner: Express need softly. Visionary: Offer calm support."
+    },
+    {
+        "pairing": "R-N-D x R-F-D",
+        "description": "Soft needer meets quiet clinger—present reliance vs. future reliance.",
+        "cautions": "Both may cling; no lead.",
+        "advice": "Leaner: Share a now-need. Dreamer: Voice a future hope."
+    },
+    {
+        "pairing": "R-N-D x M-P-I",
+        "description": "Soft needer meets measured solo—present reliance vs. balanced reflection.",
+        "cautions": "Leaner may lean; Chronicler may distance.",
+        "advice": "Leaner: Voice need softly. Chronicler: Respond evenly."
+    },
+    {
+        "pairing": "R-N-D x M-P-M",
+        "description": "Soft needer meets even linker—present reliance vs. balanced nostalgia.",
+        "cautions": "Leaner may cling; Remembrancer may tire.",
+        "advice": "Leaner: Express need softly. Remembrancer: Offer gentle link."
+    },
+    {
+        "pairing": "R-N-D x M-P-D",
+        "description": "Soft needer meets gentle needer—present reliance vs. nostalgic reliance.",
+        "cautions": "Both may lean; no spark.",
+        "advice": "Leaner: Share a now-need. Archivist: Share a past need."
+    },
+    {
+        "pairing": "R-N-D x M-N-I",
+        "description": "Soft needer meets even solo—present reliance vs. present autonomy.",
+        "cautions": "Leaner may lean; Drifter may drift.",
+        "advice": "Leaner: Voice need softly. Drifter: Engage lightly."
+    },
+    {
+        "pairing": "R-N-D x M-N-M",
+        "description": "Soft needer meets steady linker—present reliance vs. present balance.",
+        "cautions": "Leaner may cling; Flow may tire.",
+        "advice": "Leaner: Express need softly. Flow: Offer soft connection."
+    },
+    {
+        "pairing": "R-N-D x M-N-D",
+        "description": "Soft needer meets mild needer—present reliance vs. present reliance.",
+        "cautions": "Both may cling; no drive.",
+        "advice": "Leaner: Share a need. Seeker: Support gently."
+    },
+    {
+        "pairing": "R-N-D x M-F-I",
+        "description": "Soft needer meets cautious solo—present reliance vs. future autonomy.",
+        "cautions": "Leaner may lean; Trailblazer may isolate.",
+        "advice": "Leaner: Voice need softly. Trailblazer: Share a plan."
+    },
+    {
+        "pairing": "R-N-D x M-F-M",
+        "description": "Soft needer meets firm dreamer—present reliance vs. future balance.",
+        "cautions": "Leaner may cling; Navigator may tire.",
+        "advice": "Leaner: Express need softly. Navigator: Offer steady support."
+    },
+    {
+        "pairing": "R-N-D x M-F-D",
+        "description": "Soft needer meets soft clinger—present reliance vs. future reliance.",
+        "cautions": "Both may lean; no lead.",
+        "advice": "Leaner: Share a now-need. Futurist: Share a vision mildly."
+    },
+    {
+        "pairing": "R-N-D x O-P-I",
+        "description": "Soft needer meets bold solo—present reliance vs. loud reflection.",
+        "cautions": "Leaner may lean; Recaller may overwhelm.",
+        "advice": "Leaner: Voice need softly. Recaller: Tone down."
+    },
+    {
+        "pairing": "R-N-D x O-P-M",
+        "description": "Soft needer meets loud linker—present reliance vs. vibrant nostalgia.",
+        "cautions": "Leaner may cling; Keeper may push.",
+        "advice": "Leaner: Express need softly. Keeper: Offer warm space."
+    },
+    {
+        "pairing": "R-N-D x O-P-D",
+        "description": "Soft needer meets vocal needer—present reliance vs. loud reliance.",
+        "cautions": "Leaner may withdraw; Clinger may overwhelm.",
+        "advice": "Leaner: Voice need softly. Clinger: Ease volume."
+    },
+    {
+        "pairing": "R-N-D x O-N-I",
+        "description": "Soft needer meets vivid solo—present reliance vs. loud presence.",
+        "cautions": "Leaner may lean; Lone may dominate.",
+        "advice": "Leaner: Voice need softly. Lone: Ease volume."
+    },
+    {
+        "pairing": "R-N-D x O-N-M",
+        "description": "Soft needer meets bright connector—present reliance vs. vibrant now.",
+        "cautions": "Leaner may cling; Linker may push.",
+        "advice": "Leaner: Express need softly. Linker: Offer light link."
+    },
+    {
+        "pairing": "R-N-D x O-N-D",
+        "description": "Soft needer meets loud needer—present reliance vs. present reliance.",
+        "cautions": "Leaner (R) may withdraw; Leaner (O) may overwhelm.",
+        "advice": "Leaner (R): Voice need softly. Leaner (O): Ease volume."
+    },
+    {
+        "pairing": "R-N-D x O-F-I",
+        "description": "Soft needer meets fierce solo—present reliance vs. loud future.",
+        "cautions": "Leaner may lean; Pioneer may dominate.",
+        "advice": "Leaner: Voice need softly. Pioneer: Tone down."
+    },
+    {
+        "pairing": "R-N-D x O-F-M",
+        "description": "Soft needer meets bold dreamer—present reliance vs. vibrant vision.",
+        "cautions": "Leaner may cling; Guide may push.",
+        "advice": "Leaner: Express need softly. Guide: Offer bold support."
+    },
+    {
+        "pairing": "R-N-D x O-F-D",
+        "description": "Soft needer meets eager clinger—present reliance vs. loud reliance.",
+        "cautions": "Leaner may withdraw; Dreamer may overwhelm.",
+        "advice": "Leaner: Voice need softly. Dreamer: Share hope softly."
+    },
+    {
+        "pairing": "R-F-I x R-F-M",
+        "description": "Lone visionary meets steady dreamer—future solitude vs. future balance.",
+        "cautions": "Planner may isolate; Visionary may outreach.",
+        "advice": "Planner: Share a goal quietly. Visionary: Offer calm support."
+    },
+    {
+        "pairing": "R-F-I x R-F-D",
+        "description": "Lone visionary meets quiet clinger—future solitude vs. future reliance.",
+        "cautions": "Planner may resist Dreamer; Dreamer may cling.",
+        "advice": "Planner: Set bounds. Dreamer: Voice hope softly."
+    },
+    {
+        "pairing": "R-F-I x M-P-I",
+        "description": "Lone visionary meets measured solo—future solitude vs. balanced reflection.",
+        "cautions": "Both may distance; no link.",
+        "advice": "Planner: Share a goal quietly. Chronicler: Respond evenly."
+    },
+    {
+        "pairing": "R-F-I x M-P-M",
+        "description": "Lone visionary meets even linker—future solitude vs. balanced nostalgia.",
+        "cautions": "Planner may isolate; Remembrancer may connect.",
+        "advice": "Planner: Share a plan quietly. Remembrancer: Offer gentle link."
+    },
+    {
+        "pairing": "R-F-I x M-P-D",
+        "description": "Lone visionary meets gentle needer—future solitude vs. nostalgic reliance.",
+        "cautions": "Planner may resist Archivist; Archivist may lean.",
+        "advice": "Planner: Set bounds. Archivist: Share need mildly."
+    },
+    {
+        "pairing": "R-F-I x M-N-I",
+        "description": "Lone visionary meets even solo—future solitude vs. present autonomy.",
+        "cautions": "Both may drift apart; no tie.",
+        "advice": "Planner: Share a goal quietly. Drifter: Engage lightly."
+    },
+    {
+        "pairing": "R-F-I x M-N-M",
+        "description": "Lone visionary meets steady linker—future solitude vs. present balance.",
+        "cautions": "Planner may isolate; Flow may outreach.",
+        "advice": "Planner: Share a plan quietly. Flow: Offer soft connection."
+    },
+    {
+        "pairing": "R-F-I x M-N-D",
+        "description": "Lone visionary meets mild needer—future solitude vs. present reliance.",
+        "cautions": "Planner may resist Seeker; Seeker may lean.",
+        "advice": "Planner: Set bounds. Seeker: Voice need gently."
+    },
+    {
+        "pairing": "R-F-I x M-F-I",
+        "description": "Lone visionary meets cautious solo—future solitude vs. future autonomy.",
+        "cautions": "Both may isolate; no bridge.",
+        "advice": "Planner: Share a goal quietly. Trailblazer: Suggest a plan."
+    },
+    {
+        "pairing": "R-F-I x M-F-M",
+        "description": "Lone visionary meets firm dreamer—future solitude vs. future balance.",
+        "cautions": "Planner may isolate; Navigator may outreach.",
+        "advice": "Planner: Share a plan quietly. Navigator: Offer steady support."
+    },
+    {
+        "pairing": "R-F-I x M-F-D",
+        "description": "Lone visionary meets soft clinger—future solitude vs. future reliance.",
+        "cautions": "Planner may resist Futurist; Futurist may cling.",
+        "advice": "Planner: Set bounds. Futurist: Share vision mildly."
+    },
+    {
+        "pairing": "R-F-I x O-P-I",
+        "description": "Lone visionary meets bold solo—future solitude vs. loud reflection.",
+        "cautions": "Planner may withdraw; Recaller may overwhelm.",
+        "advice": "Planner: Share a plan quietly. Recaller: Tone down."
+    },
+    {
+        "pairing": "R-F-I x O-P-M",
+        "description": "Lone visionary meets loud linker—future solitude vs. vibrant nostalgia.",
+        "cautions": "Planner may isolate; Keeper may push.",
+        "advice": "Planner: Share a goal quietly. Keeper: Offer warm space."
+    },
+    {
+        "pairing": "R-F-I x O-P-D",
+        "description": "Lone visionary meets vocal needer—future solitude vs. loud reliance.",
+        "cautions": "Planner may resist Clinger; Clinger may overwhelm.",
+        "advice": "Planner: Set bounds. Clinger: Express need softly."
+    },
+    {
+        "pairing": "R-F-I x O-N-I",
+        "description": "Lone visionary meets vivid solo—future solitude vs. loud presence.",
+        "cautions": "Planner may withdraw; Lone may dominate.",
+        "advice": "Planner: Share a plan quietly. Lone: Ease volume."
+    },
+    {
+        "pairing": "R-F-I x O-N-M",
+        "description": "Lone visionary meets bright connector—future solitude vs. vibrant now.",
+        "cautions": "Planner may isolate; Linker may push.",
+        "advice": "Planner: Share a goal quietly. Linker: Offer light link."
+    },
+    {
+        "pairing": "R-F-I x O-N-D",
+        "description": "Lone visionary meets loud needer—future solitude vs. present reliance.",
+        "cautions": "Planner may resist Leaner; Leaner may overwhelm.",
+        "advice": "Planner: Set bounds. Leaner: Voice need softly."
+    },
+    {
+        "pairing": "R-F-I x O-F-I",
+        "description": "Lone visionary meets fierce solo—future solitude vs. loud future.",
+        "cautions": "Planner may withdraw; Pioneer may dominate.",
+        "advice": "Planner: Share a plan quietly. Pioneer: Tone down."
+    },
+    {
+        "pairing": "R-F-I x O-F-M",
+        "description": "Lone visionary meets bold dreamer—future solitude vs. vibrant vision.",
+        "cautions": "Planner may isolate; Guide may push.",
+        "advice": "Planner: Share a goal quietly. Guide: Offer bold support."
+    },
+    {
+        "pairing": "R-F-I x O-F-D",
+        "description": "Lone visionary meets eager clinger—future solitude vs. loud reliance.",
+        "cautions": "Planner may resist Dreamer; Dreamer may overwhelm.",
+        "advice": "Planner: Set bounds. Dreamer: Share hope softly."
+    },
+    {
+        "pairing": "R-F-M x R-F-D",
+        "description": "Steady dreamer meets quiet clinger—future balance vs. future reliance.",
+        "cautions": "Visionary may tire of Dreamer; Dreamer may cling.",
+        "advice": "Visionary: Offer calm support. Dreamer: Voice hope softly."
+    },
+    {
+        "pairing": "R-F-M x M-P-I",
+        "description": "Steady dreamer meets measured solo—future balance vs. balanced reflection.",
+        "cautions": "Visionary may outreach; Chronicler may distance.",
+        "advice": "Visionary: Offer steady support. Chronicler: Share a tale evenly."
+    },
+    {
+        "pairing": "R-F-M x M-P-M",
+        "description": "Steady dreamer meets even linker—future balance vs. balanced nostalgia.",
+        "cautions": "Visionary may lean future; Remembrancer may lean past.",
+        "advice": "Visionary: Plan steadily. Remembrancer: Reflect evenly."
+    },
+    {
+        "pairing": "R-F-M x M-P-D",
+        "description": "Steady dreamer meets gentle needer—future balance vs. nostalgic reliance.",
+        "cautions": "Visionary may tire of Archivist; Archivist may lean.",
+        "advice": "Visionary: Offer steady support. Archivist: Share need mildly."
+    },
+    {
+        "pairing": "R-F-M x M-N-I",
+        "description": "Steady dreamer meets even solo—future balance vs. present autonomy.",
+        "cautions": "Visionary may outreach; Drifter may drift.",
+        "advice": "Visionary: Offer calm support. Drifter: Engage lightly."
+    },
+    {
+        "pairing": "R-F-M x M-N-M",
+        "description": "Steady dreamer meets steady linker—future balance vs. present balance.",
+        "cautions": "Visionary may lean future; Flow may lean now.",
+        "advice": "Visionary: Plan steadily. Flow: Suggest a now-task."
+    },
+    {
+        "pairing": "R-F-M x M-N-D",
+        "description": "Steady dreamer meets mild needer—future balance vs. present reliance.",
+        "cautions": "Visionary may tire of Seeker; Seeker may lean.",
+        "advice": "Visionary: Offer steady support. Seeker: Voice need gently."
+    },
+    {
+        "pairing": "R-F-M x M-F-I",
+        "description": "Steady dreamer meets cautious solo—future balance vs. future autonomy.",
+        "cautions": "Visionary may outreach; Trailblazer may isolate.",
+        "advice": "Visionary: Offer calm support. Trailblazer: Share a plan."
+    },
+    {
+        "pairing": "R-F-M x M-F-M",
+        "description": "Steady dreamer meets firm dreamer—future balance vs. future balance.",
+        "cautions": "Visionary may lean quiet; Navigator may push.",
+        "advice": "Visionary: Plan steadily. Navigator: Coordinate firmly."
+    },
+    {
+        "pairing": "R-F-M x M-F-D",
+        "description": "Steady dreamer meets soft clinger—future balance vs. future reliance.",
+        "cautions": "Visionary may tire of Futurist; Futurist may cling.",
+        "advice": "Visionary: Offer steady support. Futurist: Share vision mildly."
+    },
+    {
+        "pairing": "R-F-M x O-P-I",
+        "description": "Steady dreamer meets bold solo—future balance vs. loud reflection.",
+        "cautions": "Visionary may withdraw; Recaller may overwhelm.",
+        "advice": "Visionary: Stay calm. Recaller: Tone down."
+    },
+    {
+        "pairing": "R-F-M x O-P-M",
+        "description": "Steady dreamer meets loud linker—future balance vs. vibrant nostalgia.",
+        "cautions": "Visionary may lean future; Keeper may lean past.",
+        "advice": "Visionary: Plan steadily. Keeper: Offer warm space."
+    },
+    {
+        "pairing": "R-F-M x O-P-D",
+        "description": "Steady dreamer meets vocal needer—future balance vs. loud reliance.",
+        "cautions": "Visionary may tire of Clinger; Clinger may overwhelm.",
+        "advice": "Visionary: Offer steady support. Clinger: Express need softly."
+    },
+    {
+        "pairing": "R-F-M x O-N-I",
+        "description": "Steady dreamer meets vivid solo—future balance vs. loud presence.",
+        "cautions": "Visionary may withdraw; Lone may dominate.",
+        "advice": "Visionary: Stay calm. Lone: Ease volume."
+    },
+    {
+        "pairing": "R-F-M x O-N-M",
+        "description": "Steady dreamer meets bright connector—future balance vs. vibrant now.",
+        "cautions": "Visionary may lean future; Linker may lean now.",
+        "advice": "Visionary: Plan steadily. Linker: Offer light link."
+    },
+    {
+        "pairing": "R-F-M x O-N-D",
+        "description": "Steady dreamer meets loud needer—future balance vs. present reliance.",
+        "cautions": "Visionary may tire of Leaner; Leaner may overwhelm.",
+        "advice": "Visionary: Offer steady support. Leaner: Voice need softly."
+    },
+    {
+        "pairing": "R-F-M x O-F-I",
+        "description": "Steady dreamer meets fierce solo—future balance vs. loud future.",
+        "cautions": "Visionary may withdraw; Pioneer may dominate.",
+        "advice": "Visionary: Stay calm. Pioneer: Tone down."
+    },
+    {
+        "pairing": "R-F-M x O-F-M",
+        "description": "Steady dreamer meets bold dreamer—future balance vs. vibrant vision.",
+        "cautions": "Visionary may lean quiet; Guide may push.",
+        "advice": "Visionary: Plan steadily. Guide: Offer bold support."
+    },
+    {
+        "pairing": "R-F-M x O-F-D",
+        "description": "Steady dreamer meets eager clinger—future balance vs. loud reliance.",
+        "cautions": "Visionary may tire of Dreamer; Dreamer may overwhelm.",
+        "advice": "Visionary: Offer steady support. Dreamer: Share hope softly."
+    },
+    {
+        "pairing": "R-F-D x M-P-I",
+        "description": "Quiet clinger meets measured solo—future reliance vs. balanced reflection.",
+        "cautions": "Dreamer may lean; Chronicler may distance.",
+        "advice": "Dreamer: Voice hope softly. Chronicler: Respond evenly."
+    },
+    {
+        "pairing": "R-F-D x M-P-M",
+        "description": "Quiet clinger meets even linker—future reliance vs. balanced nostalgia.",
+        "cautions": "Dreamer may cling整理: "Dreamer may cling; Remembrancer may tire.",
+        "advice": "Dreamer: Express hope softly. Remembrancer: Offer gentle link."
+    },
+    {
+        "pairing": "R-F-D x M-P-D",
+        "description": "Quiet clinger meets gentle needer—future reliance vs. nostalgic reliance.",
+        "cautions": "Both may lean; no spark.",
+        "advice": "Dreamer: Share a future hope. Archivist: Share a past need."
+    },
+    {
+        "pairing": "R-F-D x M-N-I",
+        "description": "Quiet clinger meets even solo—future reliance vs. present autonomy.",
+        "cautions": "Dreamer may lean; Drifter may drift.",
+        "advice": "Dreamer: Voice hope softly. Drifter: Engage lightly."
+    },
+    {
+        "pairing": "R-F-D x M-N-M",
+        "description": "Quiet clinger meets steady linker—future reliance vs. present balance.",
+        "cautions": "Dreamer may cling; Flow may tire.",
+        "advice": "Dreamer: Express hope softly. Flow: Offer soft connection."
+    },
+    {
+        "pairing": "R-F-D x M-N-D",
+        "description": "Quiet clinger meets mild needer—future reliance vs. present reliance.",
+        "cautions": "Both may cling; no lead.",
+        "advice": "Dreamer: Share a future hope. Seeker: Voice a now-need."
+    },
+    {
+        "pairing": "R-F-D x M-F-I",
+        "description": "Quiet clinger meets cautious solo—future reliance vs. future autonomy.",
+        "cautions": "Dreamer may lean; Trailblazer may isolate.",
+        "advice": "Dreamer: Voice hope softly. Trailblazer: Share a plan."
+    },
+    {
+        "pairing": "R-F-D x M-F-M",
+        "description": "Quiet clinger meets firm dreamer—future reliance vs. future balance.",
+        "cautions": "Dreamer may cling; Navigator may tire.",
+        "advice": "Dreamer: Express hope softly. Navigator: Offer steady support."
+    },
+    {
+        "pairing": "R-F-D x M-F-D",
+        "description": "Quiet clinger meets soft clinger—future reliance vs. future reliance.",
+        "cautions": "Both may lean; no drive.",
+        "advice": "Dreamer: Share a hope. Futurist: Share a vision mildly."
+    },
+    {
+        "pairing": "R-F-D x O-P-I",
+        "description": "Quiet clinger meets bold solo—future reliance vs. loud reflection.",
+        "cautions": "Dreamer may lean; Recaller may overwhelm.",
+        "advice": "Dreamer: Voice hope softly. Recaller: Tone down."
+    },
+    {
+        "pairing": "R-F-D x O-P-M",
+        "description": "Quiet clinger meets loud linker—future reliance vs. vibrant nostalgia.",
+        "cautions": "Dreamer may cling; Keeper may push.",
+        "advice": "Dreamer: Express hope softly. Keeper: Offer warm space."
+    },
+    {
+        "pairing": "R-F-D x O-P-D",
+        "description": "Quiet clinger meets vocal needer—future reliance vs. loud reliance.",
+        "cautions": "Dreamer may withdraw; Clinger may overwhelm.",
+        "advice": "Dreamer: Voice hope softly. Clinger: Ease volume."
+    },
+    {
+        "pairing": "R-F-D x O-N-I",
+        "description": "Quiet clinger meets vivid solo—future reliance vs. loud presence.",
+        "cautions": "Dreamer may lean; Lone may dominate.",
+        "advice": "Dreamer: Voice hope softly. Lone: Ease volume."
+    },
+    {
+        "pairing": "R-F-D x O-N-M",
+        "description": "Quiet clinger meets bright connector—future reliance vs. vibrant now.",
+        "cautions": "Dreamer may cling; Linker may push.",
+        "advice": "Dreamer: Express hope softly. Linker: Offer light link."
+    },
+    {
+        "pairing": "R-F-D x O-N-D",
+        "description": "Quiet clinger meets loud needer—future reliance vs. present reliance.",
+        "cautions": "Dreamer may withdraw; Leaner may overwhelm.",
+        "advice": "Dreamer: Voice hope softly. Leaner: Voice need softly."
+    },
+    {
+        "pairing": "R-F-D x O-F-I",
+        "description": "Quiet clinger meets fierce solo—future reliance vs. loud future.",
+        "cautions": "Dreamer may lean; Pioneer may dominate.",
+        "advice": "Dreamer: Voice hope softly. Pioneer: Tone down."
+    },
+    {
+        "pairing": "R-F-D x O-F-M",
+        "description": "Quiet clinger meets bold dreamer—future reliance vs. vibrant vision.",
+        "cautions": "Dreamer may cling; Guide may push.",
+        "advice": "Dreamer: Express hope softly. Guide: Offer bold support."
+    },
+    {
+        "pairing": "R-F-D x O-F-D",
+        "description": "Quiet clinger meets eager clinger—future reliance vs. loud reliance.",
+        "cautions": "Dreamer (R) may withdraw; Dreamer (O) may overwhelm.",
+        "advice": "Dreamer (R): Voice hope softly. Dreamer (O): Share hope softly."
+    },
+    {
+        "pairing": "M-P-I x M-P-M",
+        "description": "Measured solo meets even linker—balanced reflection vs. balanced nostalgia.",
+        "cautions": "Chronicler may distance; Remembrancer may connect.",
+        "advice": "Chronicler: Share a tale evenly. Remembrancer: Offer gentle link."
+    },
+    {
+        "pairing": "M-P-I x M-P-D",
+        "description": "Measured solo meets gentle needer—balanced reflection vs. nostalgic reliance.",
+        "cautions": "Chronicler may resist Archivist; Archivist may lean.",
+        "advice": "Chronicler: Respond evenly. Archivist: Share need mildly."
+    },
+    {
+        "pairing": "M-P-I x M-N-I",
+        "description": "Measured solo meets even solo—balanced reflection vs. present autonomy.",
+        "cautions": "Both may drift apart; no tie.",
+        "advice": "Chronicler: Share a tale evenly. Drifter: Engage lightly."
+    },
+    {
+        "pairing": "M-P-I x M-N-M",
+        "description": "Measured solo meets steady linker—balanced reflection vs. present balance.",
+        "cautions": "Chronicler may distance; Flow may outreach.",
+        "advice": "Chronicler: Share a tale evenly. Flow: Offer soft connection."
+    },
+    {
+        "pairing": "M-P-I x M-N-D",
+        "description": "Measured solo meets mild needer—balanced reflection vs. present reliance.",
+        "cautions": "Chronicler may resist Seeker; Seeker may lean.",
+        "advice": "Chronicler: Respond evenly. Seeker: Voice need gently."
+    },
+    {
+        "pairing": "M-P-I x M-F-I",
+        "description": "Measured solo meets cautious solo—balanced reflection vs. future autonomy.",
+        "cautions": "Both may distance; no link.",
+        "advice": "Chronicler: Share a tale evenly. Trailblazer: Share a plan."
+    },
+    {
+        "pairing": "M-P-I x M-F-M",
+        "description": "Measured solo meets firm dreamer—balanced reflection vs. future balance.",
+        "cautions": "Chronicler may lean past; Navigator may lean future.",
+        "advice": "Chronicler: Reflect evenly. Navigator: Plan steadily."
+    },
+    {
+        "pairing": "M-P-I x M-F-D",
+        "description": "Measured solo meets soft clinger—balanced reflection vs. future reliance.",
+        "cautions": "Chronicler may resist Futurist; Futurist may cling.",
+        "advice": "Chronicler: Respond evenly. Futurist: Share vision mildly."
+    },
 ]
