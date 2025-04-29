@@ -1397,4 +1397,10 @@
         "cautions": "Chronicler may resist Futurist; Futurist may cling.",
         "advice": "Chronicler: Respond evenly. Futurist: Share vision mildly."
     },
+    {
+        "pairing": "M-P-I x O-P-I",
+        "description": "Measured solo meets bold solo—balanced reflection vs. loud reflection.",
+        "cautions": "Chronicler may withdraw; Recaller may overwhelm.",
+        "advice": "Chronicler: Stay grounded. Recaller: Tone down intensity."
+    }
 ]
