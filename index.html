@@ -1,95 +1,53 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personality Pairing Explorer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Personality Pairing Explorer</h1>
-    <div class="dropdown-container">
-        <h3>First Personality</h3>
-        <select id="volume1">
-            <option value="R">R (Reserved)</option>
-            <option value="M">M (Measured)</option>
-            <option value="O">O (Outgoing)</option>
-        </select>
-        <select id="focus1">
-            <option value="P">P (Past)</option>
-            <option value="N">N (Now)</option>
-            <option value="F">F (Future)</option>
-        </select>
-        <select id="trait1">
-            <option value="I">I (Independent)</option>
-            <option value="M">M (Mutual)</option>
-            <option value="D">D (Dependent)</option>
+    <h1>PairPal: Personality Pairing Explorer</h1>
+    
+    <!-- Dataset Selector -->
+    <div>
+        <label for="dataset-selector">Select Personality Framework:</label>
+        <select id="dataset-selector">
+            <option value="dataset1">Framework 1 (R/M/O-P/N/F-I/M/D)</option>
+            <option value="dataset2">Framework 2 (L/M/H-C/M/O-P/B/A)</option>
+            <option value="dataset3">Framework 3 (R/M/O-P/N/F-I/M/D, Alternate)</option>
         </select>
     </div>
-    <div class="dropdown-container">
-        <h3>Second Personality</h3>
-        <select id="volume2">
-            <option value="R">R (Reserved)</option>
-            <option value="M">M (Measured)</option>
-            <option value="O">O (Outgoing)</option>
-        </select>
-        <select id="focus2">
-            <option value="P">P (Past)</option>
-            <option value="N">N (Now)</option>
-            <option value="F">F (Future)</option>
-        </select>
-        <select id="trait2">
-            <option value="I">I (Independent)</option>
-            <option value="M">M (Mutual)</option>
-            <option value="D">D (Dependent)</option>
-        </select>
+
+    <!-- Personality Dropdowns (Dynamically Populated) -->
+    <div id="personality-dropdowns">
+        <!-- First Personality -->
+        <div>
+            <h2>First Personality</h2>
+            <select id="person1-trait1"></select>
+            <select id="person1-trait2"></select>
+            <select id="person1-trait3"></select>
+        </div>
+
+        <!-- Second Personality -->
+        <div>
+            <h2>Second Personality</h2>
+            <select id="person2-trait1"></select>
+            <select id="person2-trait2"></select>
+            <select id="person2-trait3"></select>
+        </div>
     </div>
-    <div id="output">
+
+    <!-- Results Section -->
+    <div id="results">
         <h2>Results</h2>
-        <p><strong>Pairing:</strong> <span id="pairing"></span></p>
-        <p><strong>Description:</strong> <span id="description"></span></p>
-        <p><strong>Cautions:</strong> <span id="cautions"></span></p>
-        <p><strong>Advice/Recommendations:</strong> <span id="advice"></span></p>
+        <p><strong>Pairing: </strong><span id="pairing-result"></span></p>
+        <p><strong>Description: </strong><span id="description-result"></span></p>
+        <p><strong>Cautions: </strong><span id="cautions-result"></span></p>
+        <p><strong>Advice/Recommendations: </strong><span id="advice-result"></span></p>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
