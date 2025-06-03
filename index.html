@@ -8,62 +8,70 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <h1>Personality Pairing Explorer</h1>
-    <div class="dropdown-container">
-        <label for="mode">Select Mode: </label>
-        <select id="mode">
-            <option value="dataset1">Mode 1 (Dataset 1)</option>
-            <option value="dataset2">Mode 2 (Dataset 2)</option>
-            <option value="dataset3">Mode 3 (Dataset 3)</option>
-        </select>
-    </div>
+    <header>
+        <h1>Personality Pairing Explorer</h1>
+    </header>
+    <nav>
+        <div class="dropdown-container">
+            <label for="mode">Select Mode: </label>
+            <select id="mode">
+                <option value="dataset1">Mode 1 (Dataset 1)</option>
+                <option value="dataset2">Mode 2 (Dataset 2)</option>
+                <option value="dataset3">Mode 3 (Dataset 3)</option>
+            </select>
+        </div>
+    </nav>
+    <main>
+        <div class="dropdown-container">
+            <h2>First Personality</h2>
+            <select id="volume1">
+                <option value="R">R (Reserved)</option>
+                <option value="M">M (Measured)</option>
+                <option value="O">O (Outgoing)</option>
+            </select>
+            <select id="focus1">
+                <option value="P">P (Past)</option>
+                <option value="N">N (Now)</option>
+                <option value="F">F (Future)</option>
+            </select>
+            <select id="trait1">
+                <option value="I">I (Independent)</option>
+                <option value="M">M (Mutual)</option>
+                <option value="D">D (Dependent)</option>
+            </select>
+        </div>
 
-    <div class="dropdown-container">
-        <h2>First Personality</h2>
-        <select id="volume1">
-            <option value="R">R (Reserved)</option>
-            <option value="M">M (Measured)</option>
-            <option value="O">O (Outgoing)</option>
-        </select>
-        <select id="focus1">
-            <option value="P">P (Past)</option>
-            <option value="N">N (Now)</option>
-            <option value="F">F (Future)</option>
-        </select>
-        <select id="trait1">
-            <option value="I">I (Independent)</option>
-            <option value="M">M (Mutual)</option>
-            <option value="D">D (Dependent)</option>
-        </select>
-    </div>
+        <div class="dropdown-container">
+            <h2>Second Personality</h2>
+            <select id="volume2">
+                <option value="R">R (Reserved)</option>
+                <option value="M">M (Measured)</option>
+                <option value="O">O (Outgoing)</option>
+            </select>
+            <select id="focus2">
+                <option value="P">P (Past)</option>
+                <option value="N">N (Now)</option>
+                <option value="F">F (Future)</option>
+            </select>
+            <select id="trait2">
+                <option value="I">I (Independent)</option>
+                <option value="M">M (Mutual)</option>
+                <option value="D">D (Dependent)</option>
+            </select>
+        </div>
 
-    <div class="dropdown-container">
-        <h2>Second Personality</h2>
-        <select id="volume2">
-            <option value="R">R (Reserved)</option>
-            <option value="M">M (Measured)</option>
-            <option value="O">O (Outgoing)</option>
-        </select>
-        <select id="focus2">
-            <option value="P">P (Past)</option>
-            <option value="N">N (Now)</option>
-            <option value="F">F (Future)</option>
-        </select>
-        <select id="trait2">
-            <option value="I">I (Independent)</option>
-            <option value="M">M (Mutual)</option>
-            <option value="D">D (Dependent)</option>
-        </select>
-    </div>
-
-    <div id="output">
-        <h2>Results</h2>
-        <p><strong>Current Mode:</strong> <span id="current-mode">Mode 1 (Dataset 1)</span></p>
-        <p><strong>Pairing:</strong> <span id="pairing"></span></p>
-        <p><strong>Description:</strong> <span id="description"></span></p>
-        <p><strong>Cautions:</strong> <span id="cautions"></span></p>
-        <p><strong>Advice/Recommendations:</strong> <span id="advice"></span></p>
-    </div>
+        <div id="output">
+            <h2>Results</h2>
+            <p><strong>Current Mode:</strong> <span id="current-mode">Mode 1 (Dataset 1)</span></p>
+            <p><strong>Pairing:</strong> <span id="pairing"></span></p>
+            <p><strong>Description:</strong> <span id="description"></span></p>
+            <p><strong>Cautions:</strong> <span id="cautions"></span></p>
+            <p><strong>Advice/Recommendations:</strong> <span id="advice"></span></p>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Ken Kapptie | For educational use only | All rights reserved. <a href="#">More tools like this</a> | <a href="#">Want your own?</a> | <a href="#">Learn by Quiz</a></p>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <script src="script.js"></script>
