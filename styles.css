@@ -4,47 +4,24 @@ body {
     margin: 20px auto;
     padding: 20px;
 }
-
-#dataset-selector {
-    padding: 5px;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-#personality-dropdowns {
+.dropdown-container {
     margin-bottom: 20px;
 }
-
-#personality-dropdowns div {
-    margin-bottom: 15px;
-}
-
 select {
     margin-right: 10px;
     padding: 5px;
-    font-size: 14px;
+    font-size: 16px;
 }
-
-#pairing-output {
+#output {
     margin-top: 20px;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
-h1 {
-    text-align: center;
-}
-
 h2 {
     margin-top: 0;
-    font-size: 18px;
 }
-
-p {
-    margin: 10px 0;
-}
-
-span {
-    font-weight: normal;
+label {
+    margin-right: 10px;
+    font-weight: bold;
 }
