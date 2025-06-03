@@ -4,6 +4,9 @@ let currentMode = 'dataset1'; // Default mode
 async function loadPairings(mode) {
     try {
         const response = await fetch(`data/${mode}.csv`);
+        if (!response.ok) {
+            throw new Error(`Failed to load ${mode}.csv: ${response.statusText}`);
+        }
         const csvText = await response.text();
         Papa.parse(csvText, {
             header: true,
@@ -13,12 +16,12 @@ async function loadPairings(mode) {
             },
             error: (error) => {
                 console.error('Error parsing CSV:', error);
-                document.getElementById("description").textContent = "Error loading pairing data.";
+                document.getElementById("description").textContent = "Error loading pairing data. Please ensure the dataset is available.";
             }
         });
     } catch (error) {
         console.error('Error loading pairings:', error);
-        document.getElementById("description").textContent = "Error loading pairing data.";
+        document.getElementById("description").textContent = "Error loading pairing data. Please ensure the dataset is available.";
     }
 }
 
