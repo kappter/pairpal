@@ -3,28 +3,31 @@ let currentMode = 'dataset1'; // Default mode
 
 async function loadPairings(mode) {
     try {
-        console.log(`Loading dataset: data/${mode}.csv`);
+        console.log(`Attempting to load dataset: data/${mode}.csv`);
         const response = await fetch(`data/${mode}.csv`);
         if (!response.ok) {
             throw new Error(`Failed to load ${mode}.csv: ${response.statusText}`);
         }
         const csvText = await response.text();
+        console.log(`Fetched ${mode}.csv, parsing...`);
         Papa.parse(csvText, {
             header: true,
             complete: (result) => {
-                console.log(`Parsed ${mode}.csv:`, result.data);
-                pairings = result.data.filter(row => row.pairing); // Filter out invalid rows
+                pairings = result.data.filter(row => row.pairing && row.pairing.trim()); // Filter out invalid rows
+                console.log(`Parsed ${mode}.csv, found ${pairings.length} valid pairings:`, pairings);
                 document.getElementById("current-mode").textContent = `Mode ${mode === 'dataset1' ? '1' : mode === 'dataset2' ? '2' : '3'} (Dataset ${mode})`;
                 updateOutput(); // Update after data is loaded
             },
             error: (error) => {
-                console.error('Error parsing CSV:', error);
-                document.getElementById("description").textContent = `Error loading ${mode}.csv. Please ensure the dataset is available.`;
+                console.error(`Error parsing ${mode}.csv:`, error);
+                document.getElementById("description").textContent = `Error loading ${mode}.csv. Please ensure the dataset file exists in the data/ folder.`;
+                document.getElementById("current-mode").textContent = `Mode ${mode === 'dataset1' ? '1' : mode === 'dataset2' ? '2' : '3'} (Failed to load)`;
             }
         });
     } catch (error) {
-        console.error('Error loading pairings:', error);
-        document.getElementById("description").textContent = `Error loading ${mode}.csv. Please ensure the dataset is available.`;
+        console.error(`Error loading ${mode}.csv:`, error);
+        document.getElementById("description").textContent = `Error loading ${mode}.csv. Please ensure the dataset file exists in the data/ folder.`;
+        document.getElementById("current-mode").textContent = `Mode ${mode === 'dataset1' ? '1' : mode === 'dataset2' ? '2' : '3'} (Failed to load)`;
     }
 }
 
@@ -48,6 +51,7 @@ function getTraitDescription(volume, focus, trait) {
 }
 
 function generateDynamicPairing(p1, p2, forwardPairing) {
+    console.log(`Generating dynamic pairing for ${forwardPairing}`);
     const [v1, f1, t1] = p1.split('-');
     const [v2, f2, t2] = p2.split('-');
 
@@ -77,17 +81,18 @@ function updateOutput() {
     const forwardPairing = `${volume1}-${focus1}-${trait1} x ${volume2}-${focus2}-${trait2}`;
     const reversePairing = `${volume2}-${focus2}-${trait2} x ${volume1}-${focus1}-${trait1}`;
 
+    console.log(`Searching for pairing: ${forwardPairing} or ${reversePairing} in ${currentMode}`);
     let match = pairings.find(p => p.pairing === forwardPairing || p.pairing === reversePairing);
 
     if (!match) {
-        console.log(`No match found for ${forwardPairing} or ${reversePairing}, generating dynamic pairing`);
+        console.log(`No match found in ${currentMode}, generating dynamic pairing`);
         match = generateDynamicPairing(
             `${volume1}-${focus1}-${trait1}`,
             `${volume2}-${focus2}-${trait2}`,
             forwardPairing
         );
     } else {
-        console.log(`Match found in ${currentMode}.csv:`, match);
+        console.log(`Match found in ${currentMode}:`, match);
     }
 
     document.getElementById("pairing").textContent = forwardPairing;
@@ -106,10 +111,12 @@ dropdowns.forEach(id => {
                 console.log(`Mode changed to ${currentMode}`);
                 loadPairings(currentMode);
             } else {
+                console.log(`Personality dropdown changed: ${id}`);
                 updateOutput();
             }
         });
     }
 });
 
+console.log('Initializing PairPal with default mode:', currentMode);
 loadPairings(currentMode);
