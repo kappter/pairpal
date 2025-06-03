@@ -27,4 +27,5 @@ label {
 }
 #current-mode {
     font-style: italic;
+    color: #555;
 }
