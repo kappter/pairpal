@@ -1,92 +1,105 @@
-const datasetSelector = document.getElementById('dataset-selector');
-const dropdownContainer = document.getElementById('personality-dropdowns');
-const outputContainer = document.getElementById('pairing-output');
-let currentData = [];
+let pairings = [];
+let currentMode = 'dataset1'; // Default mode
 
-const traitOptions = {
-  dataset1: {
-    trait1: ['R', 'M', 'O'], // Reserved, Measured, Open
-    trait2: ['P', 'N', 'F'], // Past, Neutral, Future
-    trait3: ['I', 'M', 'D']  // Independent, Mixed, Dependent
-  },
-  dataset2: {
-    trait1: ['L', 'M', 'H'], // Low, Medium, High
-    trait2: ['C', 'M', 'O'], // Closed, Mixed, Open
-    trait3: ['P', 'B', 'A']  // Passive, Balanced, Active
-  },
-  dataset3: {
-    trait1: ['R', 'M', 'O'],
-    trait2: ['P', 'N', 'F'],
-    trait3: ['I', 'M', 'D']
-  }
-};
-
-const datasetFiles = {
-  dataset1: 'data/dataset1.csv',
-  dataset2: 'data/dataset2.csv',
-  dataset3: 'data/dataset3.csv'
-};
-
-function loadDataset(dataset) {
-  Papa.parse(datasetFiles[dataset], {
-    download: true,
-    header: true,
-    complete: (result) => {
-      currentData = result.data;
-      updateDropdowns(dataset);
-      updatePairingDisplay();
-    },
-    error: (error) => {
-      outputContainer.innerText = 'Error loading dataset.';
-      console.error('CSV Error:', error);
+async function loadPairings(mode) {
+    try {
+        const response = await fetch(`data/${mode}.csv`);
+        const csvText = await response.text();
+        Papa.parse(csvText, {
+            header: true,
+            complete: (result) => {
+                pairings = result.data;
+                updateOutput(); // Update after data is loaded
+            },
+            error: (error) => {
+                console.error('Error parsing CSV:', error);
+                document.getElementById("description").textContent = "Error loading pairing data.";
+            }
+        });
+    } catch (error) {
+        console.error('Error loading pairings:', error);
+        document.getElementById("description").textContent = "Error loading pairing data.";
     }
-  });
 }
 
-function updateDropdowns(dataset) {
-  const traits = traitOptions[dataset];
-  
-  ['person1-trait1', 'person1-trait2', 'person1-trait3', 'person2-trait1', 'person2-trait2', 'person2-trait3'].forEach((id, idx) => {
-    const select = document.getElementById(id);
-    const traitKey = `trait${(idx % 3) + 1}`;
-    select.innerHTML = `<option value="">Select Trait ${idx % 3 + 1}</option>` +
-      traits[traitKey].map(value => `<option value="${value}">${value}</option>`).join('');
-    select.addEventListener('change', updatePairingDisplay);
-  });
+function getTraitDescription(volume, focus, trait) {
+    const volumeMap = {
+        'R': 'quiet',
+        'M': 'balanced',
+        'O': 'vocal'
+    };
+    const focusMap = {
+        'P': 'reflective',
+        'N': 'present-focused',
+        'F': 'forward-thinking'
+    };
+    const traitMap = {
+        'I': 'independent',
+        'M': 'cooperative',
+        'D': 'reliant'
+    };
+    return `${volumeMap[volume] || volume} ${focusMap[focus] || focus} ${traitMap[trait] || trait}`;
 }
 
-function updatePairingDisplay() {
-  const person1 = [
-    document.getElementById('person1-trait1').value,
-    document.getElementById('person1-trait2').value,
-    document.getElementById('person1-trait3').value
-  ].join('-');
-  const person2 = [
-    document.getElementById('person2-trait1').value,
-    document.getElementById('person2-trait2').value,
-    document.getElementById('person2-trait3').value
-  ].join('-');
+function generateDynamicPairing(p1, p2, forwardPairing) {
+    const [v1, f1, t1] = p1.split('-');
+    const [v2, f2, t2] = p2.split('-');
 
-  if (!person1.includes('-') || !person2.includes('-')) {
-    outputContainer.innerHTML = '<p>Please select all traits for both personalities.</p>';
-    return;
-  }
+    const desc1 = getTraitDescription(v1, f1, t1);
+    const desc2 = getTraitDescription(v2, f2, t2);
 
-  const pairingKey = `${person1} x ${person2}`;
-  const reversePairingKey = `${person2} x ${person1}`;
-  const pairing = currentData.find(row => 
-    row.Pairing === pairingKey || row.Pairing === reversePairingKey
-  );
+    const description = `${desc1} meets ${desc2}—${v1 === v2 ? 'similar' : 'contrasting'} styles in ${f1 === f2 ? 'aligned' : 'differing'} focus and ${t1 === t2 ? 'matched' : 'varied'} dependence.`;
+    const cautions = `Potential for ${v1 === 'O' && v2 === 'R' ? 'overwhelm vs. withdrawal' : t1 === 'D' && t2 === 'I' ? 'reliance vs. independence clash' : 'misalignment'}; ${f1 !== f2 ? 'differing time focus may cause disconnect' : 'similar focus may stagnate'}.`;
+    const advice = `First: ${v1 === 'R' ? 'open up slightly' : v1 === 'O' ? 'tone down intensity' : 'maintain balance'}. Second: ${t2 === 'D' ? 'express needs gently' : t2 === 'I' ? 'offer space' : 'seek mutual ground'}. ${f1 !== f2 ? 'Bridge time focus with shared activities.' : 'Explore shared goals.'}`;
 
-  if (pairing) {
-    document.getElementById('pairing-result').innerText = pairing.Pairing;
-    document.getElementById('description-result').innerText = pairing.Description || 'No description available.';
-    document.getElementById('cautions-result').innerText = pairing.Cautions || 'No cautions available.';
-    document.getElementById('advice-result').innerText = pairing['Advice/Recommendations'] || 'No advice available.';
-  } else {
-    outputContainer.innerHTML = '<p>No pairing found for this combination.</p>';
-  }
+    return {
+        pairing: forwardPairing,
+        description,
+        cautions,
+        advice
+    };
 }
 
-datasetSelector.addEventListener('change', () => loadDataset(datasetSelector.value));
-loadDataset(datasetSelector.value);
+function updateOutput() {
+    const volume1 = document.getElementById("volume1").value;
+    const focus1 = document.getElementById("focus1").value;
+    const trait1 = document.getElementById("trait1").value;
+    const volume2 = document.getElementById("volume2").value;
+    const focus2 = document.getElementById("focus2").value;
+    const trait2 = document.getElementById("trait2").value;
+
+    const forwardPairing = `${volume1}-${focus1}-${trait1} x ${volume2}-${focus2}-${trait2}`;
+    const reversePairing = `${volume2}-${focus2}-${trait2} x ${volume1}-${focus1}-${trait1}`;
+
+    let match = pairings.find(p => p.pairing === forwardPairing || p.pairing === reversePairing);
+
+    if (!match) {
+        match = generateDynamicPairing(
+            `${volume1}-${focus1}-${trait1}`,
+            `${volume2}-${focus2}-${trait2}`,
+            forwardPairing
+        );
+    }
+
+    document.getElementById("pairing").textContent = forwardPairing;
+    document.getElementById("description").textContent = match.description || 'No description available.';
+    document.getElementById("cautions").textContent = match.cautions || 'No cautions available.';
+    document.getElementById("advice").textContent = match.advice || 'No advice available.';
+}
+
+const dropdowns = ["volume1", "focus1", "trait1", "volume2", "focus2", "trait2", "mode"];
+dropdowns.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.addEventListener("change", () => {
+            if (id === "mode") {
+                currentMode = element.value;
+                loadPairings(currentMode);
+            } else {
+                updateOutput();
+            }
+        });
+    }
+});
+
+loadPairings(currentMode);
