@@ -108,7 +108,7 @@ async function loadPairings(mode) {
                 console.error(`Error parsing ${mode}.csv:`, error);
                 document.getElementById("description").textContent = `Error loading ${mode}.csv. Please ensure the dataset file exists in the data/ folder.`;
                 document.getElementById("current-mode").textContent = `Mode ${mode === 'dataset1' ? '1' : mode === 'dataset2' ? '2' : '3'} (Failed to load)`;
-                updateDropdowns(mode); // Update dropdowns even if data fails, to reflect mode
+                updateDropdowns(mode); // Update dropdowns even if data fails
             }
         });
     } catch (error) {
