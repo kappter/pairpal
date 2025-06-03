@@ -3,6 +3,7 @@ let currentMode = 'dataset1'; // Default mode
 
 async function loadPairings(mode) {
     try {
+        console.log(`Loading dataset: data/${mode}.csv`);
         const response = await fetch(`data/${mode}.csv`);
         if (!response.ok) {
             throw new Error(`Failed to load ${mode}.csv: ${response.statusText}`);
@@ -11,17 +12,19 @@ async function loadPairings(mode) {
         Papa.parse(csvText, {
             header: true,
             complete: (result) => {
-                pairings = result.data;
+                console.log(`Parsed ${mode}.csv:`, result.data);
+                pairings = result.data.filter(row => row.pairing); // Filter out invalid rows
+                document.getElementById("current-mode").textContent = `Mode ${mode === 'dataset1' ? '1' : mode === 'dataset2' ? '2' : '3'} (Dataset ${mode})`;
                 updateOutput(); // Update after data is loaded
             },
             error: (error) => {
                 console.error('Error parsing CSV:', error);
-                document.getElementById("description").textContent = "Error loading pairing data. Please ensure the dataset is available.";
+                document.getElementById("description").textContent = `Error loading ${mode}.csv. Please ensure the dataset is available.`;
             }
         });
     } catch (error) {
         console.error('Error loading pairings:', error);
-        document.getElementById("description").textContent = "Error loading pairing data. Please ensure the dataset is available.";
+        document.getElementById("description").textContent = `Error loading ${mode}.csv. Please ensure the dataset is available.`;
     }
 }
 
@@ -77,11 +80,14 @@ function updateOutput() {
     let match = pairings.find(p => p.pairing === forwardPairing || p.pairing === reversePairing);
 
     if (!match) {
+        console.log(`No match found for ${forwardPairing} or ${reversePairing}, generating dynamic pairing`);
         match = generateDynamicPairing(
             `${volume1}-${focus1}-${trait1}`,
             `${volume2}-${focus2}-${trait2}`,
             forwardPairing
         );
+    } else {
+        console.log(`Match found in ${currentMode}.csv:`, match);
     }
 
     document.getElementById("pairing").textContent = forwardPairing;
@@ -97,6 +103,7 @@ dropdowns.forEach(id => {
         element.addEventListener("change", () => {
             if (id === "mode") {
                 currentMode = element.value;
+                console.log(`Mode changed to ${currentMode}`);
                 loadPairings(currentMode);
             } else {
                 updateOutput();
